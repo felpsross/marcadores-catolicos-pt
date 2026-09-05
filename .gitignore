@@ -1,0 +1,14 @@
+node_modules
+dist
+.vite
+.vercel
+*.local
+.DS_Store
+Thumbs.db
+
+# ficheiros de trabalho na raiz (nao usados pelo site)
+/*.png
+/*.PNG
+/*.jpg
+/*.jpeg
+/inicio pt/

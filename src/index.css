@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* ---------- Tokens: tema claro ---------- */
+:root {
+  --radius: 0.75rem;
+
+  --background: #fdf9f3;
+  --foreground: #2e1d10;
+  --card: #ffffff;
+  --card-foreground: #2e1d10;
+  --popover: #ffffff;
+  --popover-foreground: #2e1d10;
+
+  --primary: #6b4423;
+  --primary-foreground: #fdf6ec;
+  --secondary: #f5eadb;
+  --secondary-foreground: #4a2d18;
+  --muted: #f5eadb;
+  --muted-foreground: #7b6353;
+  --accent: #ecd9bd;
+  --accent-foreground: #4a2d18;
+  --destructive: #c33a24;
+  --destructive-foreground: #fdf6ec;
+
+  --border: #e7d6bf;
+  --input: #e7d6bf;
+  --ring: #b0803a;
+
+  --gold: #e7b643;
+  --gold-foreground: #2e1d10;
+  --success: #5c8a35;
+  --success-foreground: #fdf6ec;
+
+  --gradient-gold: linear-gradient(135deg, #f7cc4b, #dfa635);
+  --gradient-brown: linear-gradient(160deg, #4a2d18, #23150c);
+  --shadow-soft: 0 10px 30px -12px rgb(74 45 24 / 0.22);
+  --shadow-gold: 0 14px 40px -14px rgb(176 128 58 / 0.4);
+}
+
+/* ---------- Expondo tokens ao Tailwind ---------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-serif: var(--font-sans);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* ---------- Utilitários customizados ---------- */
+@utility bg-gradient-gold {
+  background-image: var(--gradient-gold);
+}
+@utility bg-gradient-brown {
+  background-image: var(--gradient-brown);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ---------- Interações ---------- */
+/* Cartões que reagem ao rato no desktop e ao toque no telemóvel. */
+.cartao-interativo {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+@media (hover: hover) {
+  .cartao-interativo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-gold);
+    border-color: rgb(231 182 67 / 0.45);
+  }
+}
+.cartao-interativo:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Carrossel arrastável no telemóvel; volta a grelha a partir de 640px. */
+.carrossel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+}
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+.carrossel > * {
+  flex: 0 0 82%;
+  scroll-snap-align: center;
+}
+@media (min-width: 640px) {
+  .carrossel {
+    display: grid;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .carrossel > * {
+    flex: initial;
+  }
+}
+
+/* ---------- Animações ---------- */
+@keyframes pulse-arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+@keyframes vsl-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(231 182 67 / 0.45);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 28px 6px rgb(231 182 67 / 0.55);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 14px 40px -14px rgb(176 128 58 / 0.5);
+  }
+  50% {
+    transform: scale(1.035);
+    box-shadow: 0 18px 50px -14px rgb(176 128 58 / 0.7);
+  }
+}
+@keyframes pulse-arrow-up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-pulse-arrow {
+  animation: pulse-arrow 1.4s ease-in-out infinite;
+}
+.animate-pulse-arrow-up {
+  animation: pulse-arrow-up 1.4s ease-in-out infinite;
+}
+.animate-breathe {
+  animation: breathe 2.4s ease-in-out infinite;
+}
+.animate-vsl-pulse {
+  animation: vsl-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-arrow,
+  .animate-pulse-arrow-up,
+  .animate-breathe,
+  .animate-vsl-pulse {
+    animation: none;
+  }
+  .cartao-interativo {
+    transition: none;
+  }
+  .cartao-interativo:hover,
+  .cartao-interativo:active {
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* VSL em formato vertical (9:16, tipo Reels).
+   A largura vem da altura disponível, para o vídeo nunca ficar mais alto
+   do que o ecrã nem mais largo do que o contentor. */
+.vsl-reels {
+  width: min(380px, calc(78vh * 9 / 16), 100%);
+}
+@supports (height: 1svh) {
+  .vsl-reels {
+    width: min(380px, calc(78svh * 9 / 16), 100%);
+  }
+}
