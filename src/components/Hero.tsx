@@ -36,22 +36,22 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Subtítulo */}
-        <p className="mx-auto mt-4 max-w-2xl text-balance text-center text-base text-muted-foreground sm:text-lg">
-          Nossa Senhora de Fátima, o Sagrado Coração de Jesus, Santo António e
-          os outros santos de sempre. São ficheiros em alta resolução: fazes o
-          download, imprimes em casa e usas as vezes que te apetecer. Não há
-          encomendas à espera nem programas para instalar.
-        </p>
-
         {/* Vídeo (VSL) */}
-        <div className="mt-8 sm:mt-10">
+        <div className="mt-6 sm:mt-8">
           {/* Coloca o ficheiro do vídeo em public/videos/vsl.mp4 */}
           <VslPlayer
             src="/videos/vsl.mp4"
             titulo="150 Marcadores Católicos de Página"
           />
         </div>
+
+        {/* Subtítulo */}
+        <p className="mx-auto mt-6 max-w-2xl text-balance text-center text-base text-muted-foreground sm:text-lg">
+          Nossa Senhora de Fátima, o Sagrado Coração de Jesus, Santo António e
+          os outros santos de sempre. São ficheiros em alta resolução: fazes o
+          download, imprimes em casa e usas as vezes que te apetecer. Não há
+          encomendas à espera nem programas para instalar.
+        </p>
 
         {/* CTA */}
         <div className="mt-7 flex flex-col items-center gap-3">

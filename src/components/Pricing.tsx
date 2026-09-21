@@ -74,16 +74,16 @@ export default function Pricing() {
                 De € 29,90
               </div>
               <div className="text-3xl font-extrabold text-primary">
-                € 12,90
+                € 14,90
               </div>
               <div className="mt-1 text-xs text-muted-foreground">
-                Pagamento único. Dá cerca de 9 cêntimos por marcador, com tudo dentro.
+                Pagamento único. Dá cerca de 10 cêntimos por marcador, com tudo dentro.
               </div>
             </div>
 
             <a
               href="#checkout-premium"
-              className="mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-gradient-gold px-6 py-4 text-base font-bold text-gold-foreground shadow-gold transition duration-200 hover:brightness-110 active:scale-[0.98] animate-breathe sm:text-lg"
+              className="mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-gradient-gold px-6 py-4 text-base font-bold text-gold-foreground shadow-gold transition duration-200 hover:brightness-110 active:scale-[0.98] animate-cta sm:text-lg"
             >
               QUERO A OFERTA COMPLETA
             </a>
@@ -133,17 +133,17 @@ export default function Pricing() {
               <div className="text-xs text-muted-foreground line-through">
                 De € 19,90
               </div>
-              <div className="text-3xl font-extrabold text-primary">€ 5,90</div>
+              <div className="text-3xl font-extrabold text-primary">€ 7,90</div>
               <div className="mt-1 text-xs text-muted-foreground">
-                Pagamento único. Sai a cerca de 4 cêntimos por marcador.
+                Pagamento único. Sai a cerca de 5 cêntimos por marcador.
               </div>
             </div>
 
             <a
               href="#checkout-basico"
-              className="mt-4 inline-flex w-full items-center justify-center rounded-xl border-2 border-primary bg-background px-6 py-3.5 text-base font-bold text-primary transition duration-200 hover:bg-primary hover:text-primary-foreground active:scale-[0.98]"
+              className="mt-4 inline-flex w-full max-w-sm items-center justify-center rounded-xl bg-gradient-gold px-6 py-4 text-base font-bold text-gold-foreground shadow-gold transition duration-200 hover:brightness-110 active:scale-[0.98] sm:text-lg"
             >
-              Quero a oferta básica
+              QUERO A OFERTA BÁSICA
             </a>
           </div>
 

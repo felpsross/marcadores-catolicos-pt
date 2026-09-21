@@ -87,7 +87,7 @@ export default function RendaExtra() {
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 O pacote completo custa{" "}
-                <strong className="text-foreground">€ 12,90</strong>, uma vez
+                <strong className="text-foreground">€ 14,90</strong>, uma vez
                 só. Se venderes{" "}
                 <strong className="text-foreground">
                   20 marcadores a 1,50 €
